@@ -16,7 +16,8 @@ The project aims for quality and readable code and uses ESLint and Prettier (Air
 
 While the project doesn't use TypeScript, it takes advantage of PropTypes library to perform type checking. Additional type checking is done with helper functions, when possible.
 
-The project is styled using SCSS.
+The project is styled using SCSS and atomic classes (a mix of own classes and those provided by Stylebox). 
+NOTE: While an attempt was made to make this project fully responsive, the sheer amount of data displayed in the table doesn't work well on small mobile screens. The project scales fine on small laptop and tablet screens.
 
 ## Dependencies
 The project uses the following libraries:
