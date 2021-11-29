@@ -1,0 +1,126 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Typography
+
+* {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+}
+
+// Fixed line height reduces the jumping that happens when loading a webfont.
+// `ex` ≈ height of lowercase letter. This property must be set directly on an
+// element rather than inherited, hence the `*`.
+* {
+  line-height: 2.32259ex;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+}
+
+/**
+ * :focus
+ */
+
+:focus {
+  outline: none;
+}
+
+// FF
+::-moz-focus-inner {
+  border: none;
+}
+
+/**
+ * cursors
+ */
+
+html {
+  cursor: default;
+}
+
+/**
+ * button
+ */
+
+button {
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  &:focus {@extend :focus;}
+  &:active {@extend :focus;} // FF
+  // Questionable. Causes misalignment of SVG icons and possibly other content.
+  > * {vertical-align: middle}
+}
+
+[role=button] {
+  cursor: pointer;
+}
+
+[role=slider] {
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+[role=option] {
+  cursor: pointer;
+}
+
+/**
+ * anchor
+ */
+
+a {
+  cursor: pointer;
+
+  text-decoration: none;
+  // Screw default anchor colors! They always mess with themes. Let's decorate
+  // links manually.
+  color: inherit;
+}
+
+a[disabled] {
+  // pointer-events: none;
+  cursor: not-allowed;
+}
+
+/**
+ * Misc
+ */
+
+// IE 10 fix & higher specificity.
+[hidden]:not(:root) {
+  display: none;
+}
+
+// IE fix.
+template {
+  display: none !important;
+}
+
+[disabled] {
+  // pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+img {
+  max-width: 100%;
+}

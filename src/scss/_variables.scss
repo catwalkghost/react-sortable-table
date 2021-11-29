@@ -1,0 +1,143 @@
+// Size variables
+$grid-space-lg-h:             1rem;
+$grid-space-lg-v:             1rem;
+
+$page-max-width:              1440px;
+$page-min-width:              320px;
+
+$page-breakpoint-sm:          320px;
+$page-breakpoint-md:          768px;
+$page-breakpoint-ipad-pro:    1024px;
+
+$radius: 4px;
+
+// Colors
+$color-default-white:         hsl(0, 0%, 98%);     // #FAFAFA
+$color-default-black:         hsl(0, 0%, 14%);      // #242424
+
+$color-success:               hsl(136, 71%, 37%);   // #1BA13E
+$color-danger-error:          #CC0C0F;
+
+$color-accent:                hsl(16, 92%, 57%);    // #F6642D
+$color-accent-light:          hsl(17, 89%, 71%);    // #F79671
+$color-accent-transparent:    hsla(16, 92%, 57%, .4);
+$color-accent-invisible :     hsla(16, 92%, 57%, 0);
+
+$color-link:                  hsl(193, 45%, 43%);   // #3C8A9F
+$color-link-hover:            hsl(193, 56%, 50%);   // #38A7C5
+
+$color-gray-3:                #F5F5F5;
+$color-gray-5:                #D3D3D3;
+$color-gray-transparent:      hsla(0, 0%, 69%, .5);
+
+$color-shadow:                rgba(255, 82, 82, 1);
+
+$color-primary:               #6a6a6a;
+$color-secondary:             #B0B0B0;
+
+// Static typography for all screen resolutions
+$font-size-map: (
+        50: 50px,
+        40: 40px,
+        36: 36px,
+        30: 30px,
+        26: 26px,
+        24: 24px,
+        22: 22px,
+        20: 20px,
+        18: 18px,
+        16: 16px,
+        14: 14px,
+        12: 12px,
+        10: 10px,
+        8 : 8px,
+);
+
+
+.border-accent {
+  border: 1px solid $color-accent;
+}
+
+.border-primary {
+  border: 1px solid $color-primary;
+}
+
+// Font colors
+.fg-accent {
+  color: $color-accent;
+}
+
+.fg-white {
+  color: $color-default-white;
+}
+
+.fg-black {
+  color: $color-default-black;
+}
+
+.fg-error {
+  color: $color-danger-error;
+}
+
+.fg-primary {
+  color: $color-primary;
+}
+
+// Background Colors
+.bg-accent {
+  background: $color-accent;
+}
+
+.bg-white {
+  background: $color-default-white;
+}
+
+.bg-gray-5 {
+  background: $color-gray-5;
+}
+
+.bg-gray-transparent {
+  background: $color-gray-transparent;
+}
+
+// Sizes
+.height-100p {
+  height: 100%;
+}
+
+.stretch-to-viewport-v {
+  min-height: 100vh;
+}
+
+// Position
+.relative {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.block {
+  display: block;
+}
+
+// Animation
+.animated {
+  transition: all .35s;
+}
+
+// Radius
+.rounded-1x {
+  border-radius: $radius;
+}
+
+.rounded-top-1x {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+.rounded-bottom-1x {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}

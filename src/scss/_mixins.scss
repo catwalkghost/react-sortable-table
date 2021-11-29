@@ -1,0 +1,41 @@
+@mixin hover {
+  &:hover, .enable-focus-indicators &:focus {
+    @content;
+  }
+}
+
+@mixin focus {
+  &:focus {
+    @content;
+  }
+}
+
+@mixin not-disabled {
+  &:not(:disabled):not([disabled]):not([readonly]) {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &:disabled, &[disabled], &[readonly] {
+    @content;
+  }
+}
+
+@mixin active {
+  &:active,
+    // Tentative
+  &.--active {
+    @content;
+  }
+}
+
+@mixin font-size($map) {
+  @each $key, $value in $map {
+    .font-size-#{$key} {
+      font-size: $value;
+    }
+  }
+}
+
+@include font-size($font-size-map);

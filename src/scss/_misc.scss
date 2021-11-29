@@ -1,0 +1,234 @@
+// TODO: This can be broken down into separate stylesheets
+
+// Layout
+.layout-container {
+  @extend .stretch-to-viewport-v;
+  @extend .row-center-stretch
+}
+
+.inner-layout-container {
+  @extend .col-center-stretch ;
+  @extend .width-100p;
+  @extend .stripey-background;
+  @extend .padding-1;
+
+  @include media-lg {
+    padding: 3rem;
+  }
+}
+
+// Content Container
+.content-container {
+  @extend .flex-1;
+  @extend .col-start-center;
+  @extend .gaps-v-1;
+}
+
+// Table Container
+.table-container {
+  @extend .width-100p;
+  @extend .col-center-center;
+  @extend .gaps-v-1;
+}
+
+// Table
+.table {
+  //@extend .border-accent;
+  @extend .rounded-1x;
+  @extend .width-100p;
+  border-collapse: collapse;
+}
+
+// Table Header
+.table-header {
+  @extend .table-row;
+
+  @extend .font-weight-700;
+  @extend .font-h3;
+
+  @extend .bg-accent;
+  @extend .fg-white;
+
+  & td {
+    &:first-of-type {
+      border-top-left-radius: 8px;
+    }
+    &:last-of-type {
+      border-top-right-radius: 8px;
+    }
+  }
+}
+
+// Table Body
+.table-body {
+  & tr {
+    &:last-of-type {
+      & td {
+        &:first-of-type {
+          border-bottom-left-radius: 8px;
+        }
+        &:last-of-type {
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+// Table Row
+.table-row {
+  @extend .width-100p;
+}
+
+// Table Cell
+.table-cell {
+  @extend .padding-0x5;
+  @include media-lg {
+    padding: 1rem;
+  }
+}
+
+// Main Table Content
+.table-content {
+  @extend .fg-primary;
+
+  &:nth-of-type(even) {
+    @extend .bg-gray-5;
+  }
+
+  &:nth-of-type(odd) {
+    @extend .bg-white;
+  }
+}
+
+// Top Bar
+.top-bar {
+  @extend .width-100p;
+  @extend .col-center-center;
+
+  @include media-lg {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+// Search Bar
+.search-bar {
+  @extend .fg-primary;
+  @extend .padding-0x5;
+  @extend .font-size-20;
+  @extend .width-100p;
+  @extend .text-center;
+  @extend .rounded-1x;
+  @extend .border-primary;
+
+  @include media-lg {
+    text-align: left;
+    min-width: 70%;
+    max-width: 70%;
+  }
+
+//  TODO: Add focus and auto-focus to the input
+}
+
+// Rows Limit
+.rows-limit {
+  @extend .width-100p;
+  @extend .row-center-center;
+  @extend .gaps-h-0x5;
+
+  @include media-lg {
+    min-width: 30%;
+    max-width: 30%;
+  }
+}
+
+.disabled-text-button {
+  font-weight: bold;
+  @extend .fg-accent;
+}
+
+// Text Button
+.text-button {
+  @extend .fg-primary;
+  @extend .line-h-1;
+
+  &:disabled {
+    @extend .disabled-text-button;
+  }
+}
+
+// Rows Limit Button
+.rows-limit-button {
+  @extend .padding-0x5;
+  @extend .text-button;
+}
+
+// Page Number Button C
+.page-number-button {
+  @extend .text-button;
+}
+
+// Pie Chart Container
+.pie-chart-container {
+  @extend .width-100p;
+  @extend .rounded-1x;
+  @extend .bg-white;
+  @extend .padding-1;
+
+  height: 400px;
+}
+
+// Chart Filter Button
+.chart-filter-button {
+  @extend .text-button;
+  @extend .text-capitalize;
+}
+
+// Loading animation
+.pulsating {
+  @extend .margin-1;
+
+  height: 2rem;
+  width: 2rem;
+
+  background: $color-shadow;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 $color-shadow;
+
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 $color-accent-transparent;
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 1rem $color-accent-invisible;
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 $color-accent-invisible;
+  }
+}
+
+// Stripey Background
+.stripey-background {
+  background-image:
+          linear-gradient(
+                          135deg,
+                          $color-gray-3 37.50%,
+                          $color-accent-transparent 37.50%,
+                          $color-accent-transparent 50%,
+                          $color-gray-3 50%,
+                          $color-gray-3 87.50%,
+                          $color-accent-transparent 87.50%,
+                          $color-accent-transparent 100%);
+  background-size: 5.66px 5.66px;
+}

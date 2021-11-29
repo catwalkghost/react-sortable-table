@@ -1,0 +1,93 @@
+@mixin responsive-font($xl, $lg, $md, $sm) {
+  font-size: #{$xl}px;
+
+  @include media-lg {
+    font-size: #{$lg}px;
+  }
+
+  @include media-md {
+    font-size: #{$md}px;
+  }
+
+  @include media-sm {
+    font-size: #{$sm}px;
+  }
+}
+
+// 30-26-24-22
+.font-h1 {
+  @include responsive-font(30, 26, 24, 22)
+}
+
+// 24-20-18-16
+.font-h2 {
+  @include responsive-font(24, 20, 18, 16)
+}
+
+// 18-18-16-16
+.font-h3 {
+  @include responsive-font(18, 18, 16, 16)
+}
+
+// 16-16-14-14
+.font-h4 {
+  @include responsive-font(16, 16, 14, 14)
+}
+
+// Line Heights
+.line-h-1 {
+  line-height: 1;
+}
+
+.line-h-1x2 {
+  line-height: 1.2;
+}
+
+.line-h-1x5 {
+  line-height: 1.5;
+}
+
+.line-h-2 {
+  line-height: 2;
+}
+
+// Font Weights
+.font-weight-300 {
+  font-weight: 300;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+// Text Transforms
+.text-uppercase {
+  text-transform: uppercase;
+  // Uppercase text needs to be spaced out. Always use em for this
+  letter-spacing: .1em;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Font Weight
+.weight-thin {
+  font-weight: var(--font-weight-thin);
+}
+
+.weight-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.weight-black {
+  font-weight: var(--font-weight-black);
+}
