@@ -1,5 +1,8 @@
 # React/Redux Table with Search, Sorting, and Pagination
 
+![ React Sortable Table ](https://github.com/catwalkghost/react-sortable-table/raw/master/static/screenshot.png "Screenshot")
+
+
 ## Project Summary
 This is sample React project, which loads data from an external JSON file and displays it in a table. The table supports filtering (case-insensitive search), sorting options per column (ascending/descending), and has options to changle the amount of entries per page.
 The project uses Nivo library to visualise DOB data as a pie chart. The chart works with filtered data and supports display by day, month, and year. Visualisation functionality can be extended further.
