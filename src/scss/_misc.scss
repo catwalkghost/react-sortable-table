@@ -43,8 +43,6 @@
   @extend .table-row;
   @extend .font-span;
 
-  @extend .font-weight-700;
-
   @extend .bg-accent;
   @extend .fg-white;
 
@@ -97,14 +95,14 @@
   @extend .padding-0x25;
 
   @include media-lg {
-    min-width: 100px;
+    min-width: 95px;
   }
 }
 
 .narrow-cell {
   @include media-lg {
-    min-width: 40px !important;
-    max-width: 40px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
   }
 }
 

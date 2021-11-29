@@ -52,7 +52,7 @@ const TABLE_HEADER = [
     },
     {
         name: 'years_of_experience',
-        columnName: 'Years of Experience',
+        columnName: 'Experience',
         align: 'right'
     },
 ];

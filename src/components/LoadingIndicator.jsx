@@ -7,7 +7,7 @@ const LoadingIndicator = () => {
     return (
         <div className='col-center-center gaps-v-2'>
             <div className='pulsating' />
-            <span className='fg-primary'>{ LOADING_TEXT }</span> :
+            <span className='fg-primary'>{ LOADING_TEXT }</span>
         </div>
     )
 }
