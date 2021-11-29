@@ -23,14 +23,21 @@ export const fetchTableData = createAsyncThunk('table/fetchTableData', async () 
     return response.json();
 });
 
+// Parses initial table data to replace 'null' values with 'n/a'
+const parseData = (arr) => {
+    return arr.forEach((o) => {
+        Object.keys(o).forEach((k) => {
+            if (o[k] === null) {
+                o[k] = 'n/a';
+            }
+        });
+    });
+};
+
 const tableSlice = createSlice({
     name: 'table',
     initialState: initialTableState,
     reducers: {
-        setTableData(state, action) {
-            const { payload: { data } } = action;
-            state.data = data;
-        },
         changeRowsLimit(state, action) {
             const { payload: { rowsLimit } } = action;
             state.rowsLimit = rowsLimit;
@@ -55,6 +62,8 @@ const tableSlice = createSlice({
             .addCase(fetchTableData.fulfilled, (state, action) => {
                 state.status = STATUS_SUCCEEDED;
                 state.data = state.data.concat(action.payload);
+                const parsedData = parseData(action.payload);
+                state.data.push(parsedData);
             })
             .addCase(fetchTableData.rejected, (state) => {
                 state.status = STATUS_FAILED;

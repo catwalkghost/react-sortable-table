@@ -47,7 +47,7 @@ const handleRowsLimit = (dispatch, rowsLimit) => {
     dispatch(changeRowsLimit({
         rowsLimit,
         currentPage: 1
-    }))
+    }));
 }
 
 /**
@@ -274,9 +274,8 @@ const formatNumber = (value, decimals) => {
  * Combines arguments into a className string. Checks for empty strings. Useful for dynamically assigned class names.
  * @returns {string}
  */
-const toClassNameString = () => {
-    // eslint-disable-next-line no-undef
-    return filter(arguments, isNonEmptyString).join(' ');
+const toClassNameString = (...args) => {
+    return filter(args, isNonEmptyString).join(' ');
 }
 
 
@@ -431,9 +430,8 @@ const nivoFormatDatesBy = (obj, key, sep) => {
     key = str(key);
     sep = str(sep);
 
-    const allDates = findAllByKey(obj, 'dob');
+    const allDates = findAllByKey(obj, 'date_of_birth');
     const splitArr = splitArrayOfDates(allDates, sep);
-
     return nivoCountByKey(splitArr, key);
 }
 

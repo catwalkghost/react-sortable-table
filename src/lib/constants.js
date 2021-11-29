@@ -4,7 +4,7 @@ const LEFT_PAGE = 'LEFT';
 const RIGHT_PAGE = 'RIGHT';
 const LOADING_TEXT = 'Loading';
 
-const TABLE_DATA_URL = './data.json'
+const TABLE_DATA_URL = './MOCK_DATA.json'
 const TABLE_DATA_ERROR = 'Data table cannot be loaded';
 
 const STATUS_IDLE = 'idle';
@@ -14,20 +14,46 @@ const STATUS_FAILED = 'failed';
 
 const TABLE_HEADER = [
     {
-        name: 'firstName',
-        columnName: 'First Name'
+        name: 'id',
+        columnName: 'ID',
+        align: 'left',
+        classes: 'narrow-cell'
     },
     {
-        name: 'lastName',
-        columnName: 'Last Name'
+        name: 'first_name',
+        columnName: 'First Name',
+        align: 'left'
     },
     {
-        name: 'dob',
-        columnName: 'DOB'
+        name: 'last_name',
+        columnName: 'Last Name',
+        align: 'left'
     },
     {
-        name: 'income',
-        columnName: 'Yearly Income'
+        name: 'email',
+        columnName: 'Email',
+        align: 'left'
+    },
+    {
+        name: 'date_of_birth',
+        columnName: 'DOB',
+        align: 'center'
+    },
+    {
+        name: 'industry',
+        columnName: 'Industry',
+        align: 'center',
+        classes: 'text-hyphenate'
+    },
+    {
+        name: 'salary',
+        columnName: 'Salary',
+        align: 'right'
+    },
+    {
+        name: 'years_of_experience',
+        columnName: 'Years of Experience',
+        align: 'right'
     },
 ];
 

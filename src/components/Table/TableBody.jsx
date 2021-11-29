@@ -4,9 +4,8 @@ import propTypes from 'prop-types';
 import { map } from 'fpx';
 import { useSelector } from 'react-redux';
 
+import { toClassNameString } from '../../utils/utils';
 import AmountWithCurrency from './AmountWithCurrency';
-
-import { generateRandomId } from '../../utils/utils';
 
 import {
     TABLE_HEADER,
@@ -25,14 +24,15 @@ const TableBody = ({ data }) => {
                 return (
                     <tr
                         className="table-row table-content"
-                        key={`row_${generateRandomId()}`}
+                        key={`row_${item.id}`}
                     >
-                        {TABLE_HEADER.map(({ name }) =>
+                        {TABLE_HEADER.map(({ name, align, classes}) =>
                             <td
-                                className="table-cell"
+                                className={toClassNameString('table-cell', classes)}
                                 key={name}
+                                align={align}
                             >
-                                {name === 'income' ? <AmountWithCurrency value={item[name]} currency={CURRENCY_GBP} decimals={DEFAULT_FRACTION_DIGITS} /> : item[name]}
+                                {name === 'salary' ? <AmountWithCurrency value={item[name]} currency={CURRENCY_GBP} decimals={DEFAULT_FRACTION_DIGITS} /> : item[name]}
                             </td>)}
                     </tr>
                 )

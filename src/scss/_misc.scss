@@ -33,7 +33,6 @@
 
 // Table
 .table {
-  //@extend .border-accent;
   @extend .rounded-1x;
   @extend .width-100p;
   border-collapse: collapse;
@@ -42,18 +41,20 @@
 // Table Header
 .table-header {
   @extend .table-row;
+  @extend .font-span;
 
   @extend .font-weight-700;
-  @extend .font-h3;
 
   @extend .bg-accent;
   @extend .fg-white;
 
   & td {
     &:first-of-type {
+      @extend .padding-l-0x5;
       border-top-left-radius: 8px;
     }
     &:last-of-type {
+      @extend .padding-r-0x5;
       border-top-right-radius: 8px;
     }
   }
@@ -61,7 +62,18 @@
 
 // Table Body
 .table-body {
+  @extend .font-span;
   & tr {
+
+    & td {
+      &:first-of-type {
+        @extend .padding-l-0x5;
+      }
+      &:last-of-type {
+        @extend .padding-r-0x5;
+      }
+    }
+
     &:last-of-type {
       & td {
         &:first-of-type {
@@ -82,9 +94,17 @@
 
 // Table Cell
 .table-cell {
-  @extend .padding-0x5;
+  @extend .padding-0x25;
+
   @include media-lg {
-    padding: 1rem;
+    min-width: 100px;
+  }
+}
+
+.narrow-cell {
+  @include media-lg {
+    min-width: 40px !important;
+    max-width: 40px !important;
   }
 }
 
@@ -117,7 +137,7 @@
 .search-bar {
   @extend .fg-primary;
   @extend .padding-0x5;
-  @extend .font-size-20;
+  @extend .font-size-16;
   @extend .width-100p;
   @extend .text-center;
   @extend .rounded-1x;

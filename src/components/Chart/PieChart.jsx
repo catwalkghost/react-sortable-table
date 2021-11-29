@@ -8,7 +8,7 @@ import { filterDatesByKey, nivoFormatDatesBy } from '../../utils/utils';
 const PieChart = ({ data }) => {
 
     const { chart: { filterDatesBy } } = useSelector(state => state);
-    const formattedData = nivoFormatDatesBy(data, filterDatesBy, '-');
+    const formattedData = nivoFormatDatesBy(data, filterDatesBy, '/');
 
     return (
         <div className='pie-chart-container'>

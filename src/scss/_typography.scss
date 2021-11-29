@@ -1,16 +1,16 @@
 @mixin responsive-font($xl, $lg, $md, $sm) {
-  font-size: #{$xl}px;
-
-  @include media-lg {
-    font-size: #{$lg}px;
-  }
+  font-size: #{$sm}px;
 
   @include media-md {
     font-size: #{$md}px;
   }
 
-  @include media-sm {
-    font-size: #{$sm}px;
+  @include media-lg {
+    font-size: #{$lg}px;
+  }
+
+  @include media-xl {
+    font-size: #{$xl}px;
   }
 }
 
@@ -32,6 +32,16 @@
 // 16-16-14-14
 .font-h4 {
   @include responsive-font(16, 16, 14, 14)
+}
+
+// 14-14-10-10
+.font-span {
+  @include responsive-font(14, 14, 8, 8)
+}
+
+// 10-10-8-8
+.font-small {
+  @include responsive-font(10, 10, 8, 8)
 }
 
 // Line Heights
@@ -73,6 +83,12 @@
 
 .text-capitalize {
   text-transform: capitalize;
+}
+
+.text-hyphenate {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 // Font Weight
